@@ -1,0 +1,281 @@
+/*--CSS RESET--*/
+
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #000000c9;
+  background-image: url(../images/bg-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+.hidden {
+  display: none;
+}
+
+.head-main {
+  font-family: "Arial", sans-serif;
+  font-size: 3em;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.neon {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff,
+    0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+}
+
+.neon::before,
+.neon::before {
+  mix-blend-mode: overlay;
+  color: #0ff;
+  animation: flicker 1.5s infinite alternate-reverse;
+}
+
+.neon::after {
+  color: #fff;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff,
+      0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    text-shadow: none;
+  }
+}
+
+main {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+article {
+  width: 320px;
+  border: 4px solid white;
+  border-radius: 8px;
+  margin: 10px 12px;
+  text-align: left;
+}
+
+article > h2 {
+  color: #ff00ff;
+  padding: 4px 8px;
+}
+
+article:first-of-type {
+  border: 4px solid #ff00ff;
+}
+
+#inprogress {
+  border: 4px solid #00ffff;
+}
+
+#inprogress h2 {
+  color: #00ffff;
+}
+
+#done {
+  border: 4px solid #ffd700;
+}
+
+#done h2 {
+  color: #ffd700;
+}
+
+article > ul {
+  list-style-type: none;
+}
+
+ul li {
+  padding: 6px 8px;
+}
+
+.do li:nth-child(odd) {
+  background-color: rgba(255, 0, 255, 0.8);
+}
+
+.progress li:nth-child(odd) {
+  background-color: rgba(0, 255, 255, 0.8);
+}
+
+.fi li:nth-child(odd) {
+  background-color: rgba(255, 215, 0, 0.8);
+}
+
+label {
+  margin-left: 5px;
+  margin-top: 5px;
+  display: flex;
+}
+
+span {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+#todo li label::before {
+  display: flex;
+  content: "\1F3AF";
+}
+
+#done input[type="checkbox"]::after {
+  margin-right: 80px;
+  display: flex;
+  margin-left: 280px;
+  content: "\274C";
+}
+
+#done input[type="checkbox"]:checked::after {
+  content: "\2714";
+  margin-left: 280px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#inprogress input[type="checkbox"]::after {
+  margin-right: 80px;
+  display: flex;
+  margin-left: 280px;
+}
+
+#inprogress input[type="checkbox"]:checked::after {
+  content: "\23F0";
+  margin-left: 280px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: vibrate 0.7s infinite;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(-2px) translateY(-2px);
+  }
+  25% {
+    transform: translateX(2px) translateY(2px);
+  }
+  50% {
+    transform: translateX(-2px) translateY(-2px);
+  }
+  75% {
+    transform: translateX(2px) translateY(2px);
+  }
+  100% {
+    transform: translateX(-2px) translateY(-2px);
+  }
+}
+
+#inprogress input[type="checkbox"]:checked + span {
+  color: #00ffff;
+  background-color: black;
+  border-radius: 10%;
+  animation: select 0.8s;
+}
+
+#done input[type="checkbox"]:checked + span {
+  color: #ffd700;
+  background-color: black;
+  border-radius: 10%;
+  animation: select 0.8s;
+}
+
+@keyframes select {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*Footer Styling*/
+footer {
+  color: rgb(255, 255, 255);
+  padding: 25px 0;
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+.sticky_footer {
+  position: sticky;
+  height: 50px;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.sticky_footer h3 {
+  animation: shake 0.5s infinite;
+  margin: 0;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    #ff00ff,
+    #ff0000,
+    #ff8c00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}

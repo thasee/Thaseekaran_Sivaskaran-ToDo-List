@@ -1,0 +1,1 @@
+This directory exclusively contains JavaScript files utilized in this project. It also includes a .gitkeep file, which instructs GitHub to retain these files and potentially include them in the repository.

@@ -1,0 +1,1 @@
+The directory will exclusively hold CSS (Cascading Style Sheet) files, identifiable by the .css file extension.
