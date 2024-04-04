@@ -1,0 +1,1 @@
+Within this directory, you will find all assets utilized for this project, including PDFs, XD files, and more. Additionally, a .gitignore file is present within this directory.
